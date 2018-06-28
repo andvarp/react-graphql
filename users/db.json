@@ -14,9 +14,13 @@
     },
     {
       "id": "48",
-      "firstName": "Samantha",
-      "age": 25,
-      "companyId": 2
+      "firstName": "Andres",
+      "age": 30,
+      "companyId": 2,
+      "rest": {
+        "firstName": "Andres",
+        "age": 30
+      }
     }
   ],
   "companies": [
