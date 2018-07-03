@@ -4,31 +4,27 @@ import { graphql } from 'react-apollo';
 import { Link, hashHistory } from 'react-router';
 import query from '../queries/fetchSong';
 
+import LyricCreate from './LyricCreate';
+import LyricList from './LyricList';
+
 class SongDetail extends Component {
   render() {
-    if (this.props.data.loading) {
+    const { song } = this.props.data;
+
+    if (!song) {
       return <div>Loading....</div>;
     }
 
     return (
       <div>
         <Link to="/">Back</Link>
-        <h3>Song Detail</h3>
-        {this.props.data.song.id} <br />
-        {this.props.data.song.title}
+        <h3>{song.title}</h3>
+        <LyricList lyrics={song.lyrics} />
+        <LyricCreate songId={this.props.params.id} />
       </div>
     );
   }
 }
-
-// const mutation = gql`
-//   mutation AddSong($title: String) {
-//     addSong(title: $title) {
-//       id
-//       title
-//     }
-//   }
-// `;
 
 export default graphql(query, {
   options: props => {
