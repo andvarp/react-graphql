@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { Link, hashHistory } from 'react-router';
-// import query from '../queries/fetchSong';
 
 class LyricCreate extends Component {
   constructor(props) {
@@ -18,7 +17,6 @@ class LyricCreate extends Component {
           content: this.state.content,
           songId: this.props.songId
         }
-        // refetchQueries: [{ query, variables: { id: this.props.songId } }]
       })
       .then(() => this.setState({ content: '' }));
   }
