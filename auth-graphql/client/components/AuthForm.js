@@ -23,6 +23,7 @@ class AuthForm extends Component {
               type="email"
             />
           </div>
+
           <div className="input-field">
             <input
               placeholder="Password"
@@ -31,6 +32,11 @@ class AuthForm extends Component {
               type="password"
             />
           </div>
+
+          <div className={'input-field errors'}>
+            {this.props.errors.map(err => <div key={err}>{err}</div>)}
+          </div>
+
           <button className={'btn'}>Submit</button>
         </form>
       </div>
